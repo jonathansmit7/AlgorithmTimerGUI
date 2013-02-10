@@ -1,0 +1,9 @@
+C:\Users\Jonathan Smit\Documents\GitHub\AlgorithmTimerGUI\THO7AlgoritmTimer\bin\Debug\THO8AlgoritmTimer.exe
+C:\Users\Jonathan Smit\Documents\GitHub\AlgorithmTimerGUI\THO7AlgoritmTimer\bin\Debug\THO8AlgoritmTimer.pdb
+C:\Users\Jonathan Smit\Documents\GitHub\AlgorithmTimerGUI\THO7AlgoritmTimer\obj\x86\Debug\THO7AlgoritmTimer.csprojResolveAssemblyReference.cache
+C:\Users\Jonathan Smit\Documents\GitHub\AlgorithmTimerGUI\THO7AlgoritmTimer\obj\x86\Debug\THO7AlgoritmTimerApplication.ImagePreviewForm.resources
+C:\Users\Jonathan Smit\Documents\GitHub\AlgorithmTimerGUI\THO7AlgoritmTimer\obj\x86\Debug\THO7AlgoritmTimerApplication.MainForm.resources
+C:\Users\Jonathan Smit\Documents\GitHub\AlgorithmTimerGUI\THO7AlgoritmTimer\obj\x86\Debug\THO7AlgoritmTimerApplication.Properties.Resources.resources
+C:\Users\Jonathan Smit\Documents\GitHub\AlgorithmTimerGUI\THO7AlgoritmTimer\obj\x86\Debug\THO7AlgoritmTimer.csproj.GenerateResource.Cache
+C:\Users\Jonathan Smit\Documents\GitHub\AlgorithmTimerGUI\THO7AlgoritmTimer\obj\x86\Debug\THO8AlgoritmTimer.exe
+C:\Users\Jonathan Smit\Documents\GitHub\AlgorithmTimerGUI\THO7AlgoritmTimer\obj\x86\Debug\THO8AlgoritmTimer.pdb

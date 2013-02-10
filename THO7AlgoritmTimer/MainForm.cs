@@ -23,6 +23,9 @@ namespace THO7AlgoritmTimerApplication
             InitializeComponent();
             AlgorithmList.Add(new FlipAlgorithm("Flip"));
             AlgorithmList.Add(new RotateAlgorithm("Rotate"));
+            AlgorithmList.Add(new BlackFilterAlgorithm("Black Filter"));
+            AlgorithmList.Add(new BlackFilterAlgorithm2("Black Layer Filter"));
+            AlgorithmList.Add(new InvertFilterAlgorithm("Invert Filter"));
             //Insert new Algorithms here
             /*          ^
             *          /|\
