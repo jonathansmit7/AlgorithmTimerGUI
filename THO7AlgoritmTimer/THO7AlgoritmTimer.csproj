@@ -46,6 +46,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -78,6 +79,7 @@
       <DependentUpon>ImagePreviewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InvertFilterAlgorithm.cs" />
+    <Compile Include="MedianAlgorithm.cs" />
     <Compile Include="RotateAlgorithm.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -88,6 +90,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FlipAlgorithm.cs" />
+    <Compile Include="UnsafeInverseAlgorithm.cs" />
     <Compile Include="VisionAlgorithm.cs" />
     <EmbeddedResource Include="ImagePreviewForm.resx">
       <DependentUpon>ImagePreviewForm.cs</DependentUpon>

@@ -26,6 +26,7 @@ namespace THO7AlgoritmTimerApplication
             AlgorithmList.Add(new BlackFilterAlgorithm("Black Filter"));
             AlgorithmList.Add(new BlackFilterAlgorithm2("Black Layer Filter"));
             AlgorithmList.Add(new InvertFilterAlgorithm("Invert Filter"));
+            AlgorithmList.Add(new UnsafeInverseAlgorithm("UNSAFE Inverse"));
             //Insert new Algorithms here
             /*          ^
             *          /|\
