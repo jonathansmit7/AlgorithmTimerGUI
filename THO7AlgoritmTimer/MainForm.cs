@@ -21,12 +21,14 @@ namespace THO7AlgoritmTimerApplication
         public MainForm()
         {
             InitializeComponent();
-            AlgorithmList.Add(new FlipAlgorithm("Flip"));
-            AlgorithmList.Add(new RotateAlgorithm("Rotate"));
-            AlgorithmList.Add(new BlackFilterAlgorithm("Black Filter"));
-            AlgorithmList.Add(new BlackFilterAlgorithm2("Black Layer Filter"));
-            AlgorithmList.Add(new InvertFilterAlgorithm("Invert Filter"));
-            AlgorithmList.Add(new UnsafeInverseAlgorithm("UNSAFE Inverse"));
+            
+            //AlgorithmList.Add(new FlipAlgorithm("Flip"));
+            //AlgorithmList.Add(new RotateAlgorithm("Rotate"));
+            //AlgorithmList.Add(new BlackFilterAlgorithm("Black Filter"));
+            //AlgorithmList.Add(new BlackFilterAlgorithm2("Black Layer Filter"));
+            //AlgorithmList.Add(new InvertFilterAlgorithm("Invert Filter"));
+            //AlgorithmList.Add(new UnsafeInverseAlgorithm("UNSAFE Inverse"));
+            AlgorithmList.Add(new MedianAlgorithm("Median"));
             //Insert new Algorithms here
             /*          ^
             *          /|\
