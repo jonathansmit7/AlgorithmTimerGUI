@@ -8,7 +8,7 @@ using System.Text;
 namespace THO7AlgoritmTimerApplication
 {	
     class UnsafeInverseAlgorithm:VisionAlgorithm	
-    {		
+    {		 
         public UnsafeInverseAlgorithm(String name): base(name)
         {			
             //default constructor		
@@ -84,7 +84,8 @@ namespace THO7AlgoritmTimerApplication
         return retval;		
     }		
     
-        private byte GetBytesPerPixel(PixelFormat pixelFormat){			
+        private byte GetBytesPerPixel(PixelFormat pixelFormat)
+        {			
             byte retval = 0;			
             switch (pixelFormat)
             {				

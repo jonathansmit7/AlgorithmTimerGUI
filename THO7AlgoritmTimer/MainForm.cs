@@ -29,6 +29,7 @@ namespace THO7AlgoritmTimerApplication
             //AlgorithmList.Add(new InvertFilterAlgorithm("Invert Filter"));
             //AlgorithmList.Add(new UnsafeInverseAlgorithm("UNSAFE Inverse"));
             AlgorithmList.Add(new MedianAlgorithm("Median"));
+            AlgorithmList.Add(new MedianAlgorithm2("Median Unsafe"));
             //Insert new Algorithms here
             /*          ^
             *          /|\

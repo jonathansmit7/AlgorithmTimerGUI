@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="InvertFilterAlgorithm.cs" />
     <Compile Include="MedianAlgorithm.cs" />
+    <Compile Include="MedianAlgorithm2.cs" />
     <Compile Include="RotateAlgorithm.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
