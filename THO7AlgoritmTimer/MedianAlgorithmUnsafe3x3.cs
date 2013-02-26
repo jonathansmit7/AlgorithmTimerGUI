@@ -7,69 +7,45 @@ using System.Drawing.Imaging;
 
 namespace THO7AlgoritmTimerApplication
 {
-    class MedianAlgorithm2 : VisionAlgorithm
+    class MedianAlgorithmUnsafe3x3 : VisionAlgorithm
     {
-        public MedianAlgorithm2(String name) : base(name) 
-        { 
+        public MedianAlgorithmUnsafe3x3(String name): base(name)
+        {
         }
+
         public override System.Drawing.Bitmap DoAlgorithm(System.Drawing.Bitmap sourceImage)
         {
+            //auteur: Jonathan Smit
+
             unsafe
             {
-                //create an empty bitmap the same size as original
-                Bitmap newBitmap = new Bitmap(sourceImage.Width, sourceImage.Height);
-
-                //lock the original bitmap in memory
+                //afbeelding vastzetten in geheugen
                 BitmapData originalData = sourceImage.LockBits(
                     new Rectangle(0, 0, sourceImage.Width, sourceImage.Height),
-                    ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb); //ImageLockMode.ReadOnly
+                    ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
 
-                /*
-                //lock the new bitmap in memory
-                BitmapData newData = newBitmap.LockBits(
-                   new Rectangle(0, 0, sourceImage.Width, sourceImage.Height),
-                   ImageLockMode.WriteOnly, PixelFormat.Format24bppRgb);
-                */
-
-                //set the number of bytes per pixel
+                //hoeveel bytes per pixel (voor jpg, 24-bit, is dat 24 gedeeld door 8 bit is 3 byte)
                 int pixelSize = 3;
 
-                int pixel = 0;
-
+                //ipv 3x3 array gewoon een int-array van 3x3=9 waarden
                 int[] pixels = new int[9];
 
-                /* kopie maken
-                for (int y = 0; y < sourceImage.Height; y++)
-                {
-                    //get the data from the original image
-                    byte* oRow = (byte*)originalData.Scan0 + (y * originalData.Stride);
-
-                    //get the data from the new image
-                    byte* nRow = (byte*)newData.Scan0 + (y * newData.Stride);
-
-                    for (int x = 0; x < sourceImage.Width; x++)
-                    {
-                        //save B,G,R for newData
-                        nRow[x * pixelSize] = oRow[x * pixelSize]; //B
-                        nRow[x * pixelSize + 1] = oRow[x * pixelSize + 1]; //G
-                        nRow[x * pixelSize + 2] = oRow[x * pixelSize + 2]; //R
-                    }
-                }
-                */
-
+                //voor n-keer 3x3: afbeelding hoogte en breedte - 2
                 for (int y = 0; y < sourceImage.Height - 2; y++)
                 {
 
-                    //get the data from the original image
+                    //adres van de eerste pixel in elke rij van de afbeelding (scan0)
+                    //adres van de eerste pixel in de rij
                     byte* oRow = (byte*)originalData.Scan0 + (y * originalData.Stride);
-
-                    //byte* nRow = (byte*)newData.Scan0 + ((y + 1) * newData.Stride);
-
+                    //voor het opslaan van de nieuwe gegevens beginnen we nog een rij lager
                     byte* nRow = (byte*)originalData.Scan0 + ((y + 1) * originalData.Stride);
+
+                    int pixel;
 
                     for (int x = 0; x < sourceImage.Width - 2; x++)
                     {
 
+                        //eerste rij
                         pixel = 0;
                         pixel = oRow[x * pixelSize];
                         pixel = (pixel << 8) | oRow[x * pixelSize + 1];
@@ -88,7 +64,8 @@ namespace THO7AlgoritmTimerApplication
                         pixel = (pixel << 8) | oRow[x * pixelSize + 8];
                         pixels[2] = pixel;
 
-                        oRow = (byte*)originalData.Scan0 + ( (y + 1) * originalData.Stride);
+                        //tweede rij
+                        oRow = (byte*)originalData.Scan0 + ((y + 1) * originalData.Stride);
 
                         pixel = 0;
                         pixel = oRow[x * pixelSize];
@@ -108,6 +85,7 @@ namespace THO7AlgoritmTimerApplication
                         pixel = (pixel << 8) | oRow[x * pixelSize + 8];
                         pixels[5] = pixel;
 
+                        //derde rij
                         oRow = (byte*)originalData.Scan0 + ((y + 2) * originalData.Stride);
 
                         pixel = 0;
@@ -128,10 +106,12 @@ namespace THO7AlgoritmTimerApplication
                         pixel = (pixel << 8) | oRow[x * pixelSize + 8];
                         pixels[8] = pixel;
 
+                        //sorteer
                         Array.Sort(pixels);
-
+                        //nieuwe pixel
                         pixel = pixels[4];
 
+                        //nieuwe pixel ontleden en weer invoegen
                         nRow[x * pixelSize + 3] = (byte)(pixel & 0xFF);
                         nRow[x * pixelSize + 4] = (byte)((pixel >> 8) & 0xFF);
                         nRow[x * pixelSize + 5] = (byte)((pixel >> 16) & 0xFF);
@@ -142,12 +122,10 @@ namespace THO7AlgoritmTimerApplication
                 }
 
                 //unlock the bitmaps
-                //newBitmap.UnlockBits(newData);
                 sourceImage.UnlockBits(originalData);
-
-                //return newBitmap;
                 return sourceImage;
             }
         }
+
     }
 }
