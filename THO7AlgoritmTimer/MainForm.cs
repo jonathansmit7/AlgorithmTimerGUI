@@ -28,8 +28,10 @@ namespace THO7AlgoritmTimerApplication
             //AlgorithmList.Add(new BlackFilterAlgorithm2("Black Layer Filter"));
             //AlgorithmList.Add(new InvertFilterAlgorithm("Invert Filter"));
             //AlgorithmList.Add(new UnsafeInverseAlgorithm("UNSAFE Inverse"));
-            AlgorithmList.Add(new MedianAlgorithm("Median"));
+            //AlgorithmList.Add(new MedianAlgorithm("Median"));
             AlgorithmList.Add(new MedianAlgorithmUnsafe3x3("Median Unsafe 3x3"));
+            AlgorithmList.Add(new MedianFilter("Median 11x11", 5));
+            AlgorithmList.Add(new MedianAlgorithmUnsafe3x3BMCopy("Median 2"));
             //Insert new Algorithms here
             /*          ^
             *          /|\

@@ -72,6 +72,8 @@
   <ItemGroup>
     <Compile Include="BlackFilterAlgorithm.cs" />
     <Compile Include="BlackFilterAlgorithm2.cs" />
+    <Compile Include="EditableImage.cs" />
+    <Compile Include="EditablePixel.cs" />
     <Compile Include="ImagePreviewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,7 +82,10 @@
     </Compile>
     <Compile Include="InvertFilterAlgorithm.cs" />
     <Compile Include="MedianAlgorithm.cs" />
+    <Compile Include="MedianAlgorithmUnsafe11x11.cs" />
     <Compile Include="MedianAlgorithmUnsafe3x3.cs" />
+    <Compile Include="MedianAlgorithmUnsafe3x3BMCopy.cs" />
+    <Compile Include="MedianFilter.cs" />
     <Compile Include="RotateAlgorithm.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
